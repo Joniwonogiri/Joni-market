@@ -814,11 +814,7 @@ function cariProduk(){
 }
 
 document.getElementById("inputAsisten").addEventListener("keypress", function(e){
-    if(e.key === "Enter") cariProduk();
-});
-    }
-
-   // ==========================================
+    if(e.key === "Enter") cariProduk( // ==========================================
 // ASISTEN PENCARI PRODUK
 // ==========================================
 const dataProduk = [
@@ -869,7 +865,9 @@ document.addEventListener("DOMContentLoaded", function(){
             if(e.key === "Enter") cariProduk();
         });
     }
-}); 
+}); );
+});
+    }
 </script>  
 
 </body>
