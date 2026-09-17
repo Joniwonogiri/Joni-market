@@ -761,6 +761,23 @@
         document.getElementById('formPermintaan').classList.remove('tampil');
         
         alert('✅ Terima kasih! Permintaan Anda sedang diproses. Kami akan segera menghubungi Anda.');
+
+        // Database produk untuk Asisten Pencari
+const databaseProduk = [
+    {nama:"Printer Multifungsi",kataKunci:["printer","cetak","print","scan","tinta","kantor","mesin cetak"],harga:"Mulai Rp1.250.000",deskripsi:"Print, Scan, Copy — Tinta infus, hemat biaya",kecocokan:"Sangat cocok untuk kebutuhan kantor kecil"},
+    {nama:"Laptop Kantor",kataKunci:["laptop","komputer","notebook","kerja","kantor","core i3","ryzen"],harga:"Mulai Rp3.990.000",deskripsi:"Core i3/Ryzen 3, RAM 8GB, SSD 256GB",kecocokan:"Cocok untuk administrasi dan pekerjaan kantor"},
+    {nama:"Toner Cartridge",kataKunci:["toner","tinta","cartridge","catridge","isi printer","laser"],harga:"Mulai Rp285.000",deskripsi:"Berbagai tipe — original & compatible tersedia",kecocokan:"Untuk printer laser, hasil cetak tajam"},
+    {nama:"Kertas HVS & F4",kataKunci:["kertas","hvs","f4","a4","print","tulis","rim","kertas kantor"],harga:"Mulai Rp45.000/rim",deskripsi:"70gsm & 80gsm — A4, F4, Letter, berbagai merek",kecocokan:"Kebutuhan pokok kantor dan sekolah"},
+    {nama:"UPS 600VA - 1200VA",kataKunci:["ups","cadangan","listrik","mati lampu","stabilizer","penyimpan daya"],harga:"Mulai Rp385.000",deskripsi:"Berbagai merek — stok siap kirim",kecocokan:"Melindungi komputer dari mati listrik mendadak"},
+    {nama:"Scanner Dokumen",kataKunci:["scanner","scan","pindai","dokumen","arsip","digital"],harga:"Mulai Rp850.000",deskripsi:"Flatbed & Sheetfed — untuk kebutuhan kantor & klinik",kecocokan:"Untuk arsip digital dokumen dengan cepat"},
+    {nama:"Router & Switch",kataKunci:["router","switch","jaringan","wifi","internet","lan","tp-link","mikrotik"],harga:"Mulai Rp155.000",deskripsi:"5-24 port — TP-Link, Mikrotik, Cisco",kecocokan:"Membangun jaringan internet kantor atau rumah"},
+    {nama:"CCTV & Paket Pasang",kataKunci:["cctv","kamera","pengawas","keamanan","pasang","monitor","rekam"],harga:"Mulai Rp1.450.000",deskripsi:"4-16 Channel — kamera indoor/outdoor + instalasi",kecocokan:"Paket lengkap dengan pemasangan"},
+    {nama:"Paket Jaringan Lengkap",kataKunci:["jaringan","internet","kabel","pasang","setting","wifi","kantor","warnet"],harga:"Hubungi kami",deskripsi:"Kami bantu rancang dan pasang jaringan sesuai kebutuhan",kecocokan:"Untuk kantor baru atau pengembangan jaringan"},
+    {nama:"Kebutuhan Khusus",kataKunci:["lain","lainnya","aneh","unik","sulit","jarang","khusus","tidak ada"],harga:"Hubungi kami",deskripsi:"Jika tidak menemukan yang Anda cari, kami bantu carikan",kecocokan:"Gunakan fitur Minta Dicarikan untuk kebutuhan khusus"}
+];
+
+function cariProduk(){const e=document.getElementById("inputAsisten").value.toLowerCase().trim(),t=document.getElementById("hasilAsisten");if(!e)return void alert("Ketik dulu apa yang Anda butuhkan ya!");const n=[];databaseProduk.forEach(r=>{let a=0;r.kataKunci.forEach(r=>{e.includes(r.toLowerCase())&&a++}),a>0&&n.push({...r,skor:a})}),n.sort((e,t)=>t.skor-e.skor);if(0===n.length)t.innerHTML='<div class="kartu-saran" style="border-left-color: #f59e0b;"><h4>😕 Belum menemukan yang cocok?</h4><p>Coba gunakan kata kunci yang lebih sederhana, atau langsung gunakan fitur <strong>"Minta Dicarikan"</strong> di bawah ini. Kami akan bantu carikan secara manual!</p></div>';else{let e=<p style="margin-bottom: 1rem; color: var(--sekunder); font-weight: 500;">✅ Menemukan ${n.length} produk yang mungkin cocok untuk Anda:</p>;n.slice(0,3).forEach(t=>{e+=<div class="kartu-saran"><h4>${t.nama}</h4><div class="harga">${t.harga}</div><p style="font-size: 0.9rem; color: var(--abu); margin-bottom: 0.5rem;">${t.deskripsi}</p><span class="cocok">💡 ${t.kecocokan}</span></div>}),e+=<p style="margin-top: 1rem; text-align: center; font-size: 0.9rem;"><a href="#produk" style="color: var(--utama);">Lihat semua produk →</a> | <a href="#" onclick="tampilkanForm(); return false;" style="color: var(--utama);">Masih belum cocok? Minta dicarikan khusus →</a></p>,t.innerHTML=e}t.classList.add("tampil"),t.scrollIntoView({behavior:"smooth",block:"nearest"})}
+document.getElementById("inputAsisten").addEventListener("keypress",function(e){"Enter"===e.key&&cariProduk()});
         
         return false;
     }
