@@ -353,6 +353,88 @@
             }
         }
     </style>
+
+    /* Asisten Pencari Produk */
+.asisten-container {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.asisten-container h2 {
+    color: var(--sekunder);
+    margin-bottom: 0.5rem;
+}
+
+.asisten-container p {
+    color: var(--abu);
+    margin-bottom: 1.5rem;
+}
+
+.asisten-input {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.asisten-input input {
+    flex: 1;
+    min-width: 250px;
+    padding: 0.9rem 1rem;
+    border: 2px solid #bfdbfe;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.asisten-input input:focus {
+    outline: none;
+    border-color: var(--utama);
+}
+
+.hasil-asisten {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    display: none;
+}
+
+.hasil-asisten.tampil {
+    display: block;
+}
+
+.kartu-saran {
+    background: white;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.8rem;
+    border-left: 4px solid var(--utama);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.kartu-saran h4 {
+    color: var(--sekunder);
+    margin-bottom: 0.3rem;
+}
+
+.kartu-saran .harga {
+    color: var(--utama);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.kartu-saran .cocok {
+    font-size: 0.85rem;
+    color: #059669;
+    background: #d1fae5;
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+}
 </head>
 <body>
 
