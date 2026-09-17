@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JONI MARKET | Punya kebutuhan? Kami bantu carikan.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --utama: #2563eb;
+            --sekunder: #1e40af;
+            --aksen: #f59e0b;
+            --terang: #f8fafc;
+            --gelap: #1f2937;
+            --abu: #6b7280;
+        }
+
+        body {
+            background-color: #fefefe;
+            color: var(--gelap);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--utama), var(--sekunder));
+            color: white;
+            padding: 1.2rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--aksen);
+        }
+
+        nav a {
+            margin-left: 1.5rem;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(to right, #eff6ff, #dbeafe);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--sekunder);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--abu);
+            margin-bottom: 2rem;
+        }
+
+        .tombol-grup {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-utama {
+            background-color: var(--utama);
+            color: white;
+        }
+
+        .btn-utama:hover {
+            background-color: var(--sekunder);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-aksen {
+            background-color: var(--aksen);
+            color: #1f2937;
+        }
+
+        .btn-aksen:hover {
+            background-color: #d97706;
+            transform: translateY(-2px);
+        }
+
+        /* KATEGORI */
+        .section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--sekunder);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .grid-kategori {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .kartu-kategori {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .kartu-kategori:hover {
+            border-color: var(--utama);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
+        }
+
+        .kartu-kategori .ikon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* PRODUK PILIHAN */
+        .grid-produk {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .kartu-produk {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .kartu-produk:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+        }
+
+        .produk-gambar {
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .produk-info {
+            padding: 1.2rem;
+        }
+
+        .produk-nama {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .produk-harga {
+            color: var(--utama);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .produk-spesifikasi {
+            font-size: 0.85rem;
+            color: var(--abu);
+            margin-bottom: 1rem;
+        }
+
+        .btn-kecil {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            width: 100%;
+        }
+
+        .link-alternatif {
+            display: block;
+            text-align: center;
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            color: var(--utama);
+            cursor: pointer;
+        }
+
+        .link-alternatif:hover {
+            text-decoration: underline;
+        }
+
+        /* BAGIAN PENTING — MINTA DICARIKAN */
+        .bagian-minta {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .bagian-minta h2 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            color: #92400e;
+        }
+
+        .bagian-minta p {
+            color: #78350f;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* FORM MINTA DICARIKAN */
+        .form-container {
+            max-width: 550px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            display: none;
+        }
+
+        .form-container.tampil {
+            display: block;
+        }
+
+        .form-container h3 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--sekunder);
+        }
+
+        .form-grup {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-grup label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--gelap);
+        }
+
+        .form-grup input, .form-grup textarea, .form-grup select {
+            width: 100%;
+            padding: 0.85rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .form-grup input:focus, .form-grup textarea:focus {
+            outline: none;
+            border-color: var(--utama);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-grup textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .catatan {
+            font-size: 0.85rem;
+            color: var(--abu);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* RESPONSIF */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            nav a {
+                margin: 0 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ================================== -->
+<!-- HEADER -->
+<!-- ================================== -->
+<header>
+    <div class="header-inner">
+        <div class="logo">JONI<span>MARKET</span></div>
+        <nav>
+            <a href="#beranda">🏠 Beranda</a>
+            <a href="#kategori">Kategori</a>
+            <a href="#produk">Produk Pilihan</a>
+            <a href="#minta">Minta Dicarikan</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ================================== -->
+<!-- HERO SECTION -->
+<!-- ================================== -->
+<section class="hero" id="beranda">
+    <h1>Punya kebutuhan? Kami bantu carikan.</h1>
+    <p>Platform pencari barang terpercaya — tidak perlu ribut, tidak perlu login</p>
+    <div class="tombol-grup">
+        <button class="btn btn-utama" onclick="scrollKeKategori()">🔎 Cari Kebutuhan</button>
+        <button class="btn btn-aksen" onclick="tampilkanForm()">📦 Minta Dicarikan</button>
+    </div>
+</section>
+
+<!-- ================================== -->
+<!-- KATEGORI -->
+<!-- ================================== -->
+<section class="section" id="kategori">
+    <h2>📂 Kategori</h2>
+    <div class="grid-kategori">
+        <div class="kartu-kategori" onclick="pilihKategori('ATK')">
+            <div class="ikon">📝</div>
+            <div>ATK</div>
+        </div>
+        <div class="kartu-kategori" onclick="pilihKategori('Komputer & Laptop')">
+            <div class="ikon">💻</div>
+            <div>Komputer & Laptop</div>
+        </div>
+        <div class="kartu-kategori" onclick="pilihKategori('Printer & Consumable')">
+            <div class="ikon">🖨️</div>
+            <div>Printer & Consumable</div>
+        </div>
+        <div class="kartu-kategori" onclick="pilihKategori('Jaringan')">
+            <div class="ikon">📡</div>
+            <div>Jaringan</div>
+        </div>
+        <div class="kartu-kategori" onclick="pilihKategori('CCTV')">
+            <div class="ikon">📹</div>
+            <div>CCTV</div>
+        </div>
+        <div class="kartu-kategori" onclick="pilihKategori('Sekolah')">
+            <div class="ikon">🎒</div>
+            <div>Sekolah</div>
+        </div>
+        <div class="kartu-kategori" onclick="pilihKategori('Klinik')">
+            <div class="ikon">🏥</div>
+            <div>Klinik</div>
+        </div>
+        <div class="kartu-kategori" onclick="pilihKategori('Laboratorium')">
+            <div class="ikon">🔬</div>
+            <div>Laboratorium</div>
+        </div>
+        <div class="kartu-kategori" onclick="pilihKategori('Kebutuhan Khusus')">
+            <div class="ikon">✨</div>
+            <div>Kebutuhan Khusus</div>
+        </div>
+    </div>
+</section>
+
+<!-- ================================== -->
+<!-- PRODUK PILIHAN -->
+<!-- ================================== -->
+<section class="section" id="produk">
+    <h2>🔥 Produk Pilihan</h2>
+    <div class="grid-produk">
+        <!-- Produk 1 -->
+        <div class="kartu-produk">
+            <div class="produk-gambar">🖨️</div>
+            <div class="produk-info">
+                <div class="produk-nama">Printer Multifungsi</div>
+                <div class="produk-harga">Mulai Rp1.250.000</div>
+                <div class="produk-spesifikasi">Print, Scan, Copy — Tinta infus, hemat biaya</div>
+                <button class="btn btn-utama btn-kecil" onclick="tanyaProduk('Printer Multifungsi')">Tanya / Pesan</button>
+                <div class="link-alternatif" onclick="cariAlternatif('Printer')">🔄 Butuh tipe lain? Cari Alternatif</div>
+            </div>
+        </div>
+
+        <!-- Produk 2 -->
+        <div class="kartu-produk">
+            <div class="produk-gambar">💻</div>
+            <div class="produk-info">
+                <div class="produk-nama">Laptop Kantor</div>
+                <div class="produk-harga">Mulai Rp3.990.000</div>
+                <div class="produk-spesifikasi">Core i3/Ryzen 3, RAM 8GB, SSD 256GB</div>
+                <button class="btn btn-utama btn-kecil" onclick="tanyaProduk('Laptop Kantor')">Tanya / Pesan</button>
+                <div class="link-alternatif" onclick="cariAlternatif('Laptop')">🔄 Butuh tipe lain? Cari Alternatif</div>
+            </div>
+        </div>
+
+        <!-- Produk 3 -->
+        <div class="kartu-produk">
+            <div class="produk-gambar">🖨️</div>
+            <div class="produk-info">
+                <div class="produk-nama">Toner Cartridge</div>
+                <div class="produk-harga">Mulai Rp285.000</div>
+                <div class="produk-spesifikasi">Berbagai tipe — original & compatible tersedia</div>
+                <button class="btn btn-utama btn-kecil" onclick="tanyaProduk('Toner Cartridge')">Tanya / Pesan</button>
+                <div class="link-alternatif" onclick="cariAlternatif('Toner')">🔄 Butuh tipe lain? Cari Alternatif</div>
+            </div>
+        </div>
+
+        <!-- Produk 4 -->
+        <div class="kartu-produk">
+            <div class="produk-gambar">📄</div>
+            <div class="produk-info">
+                <div class="produk-nama">Kertas HVS & F4</div>
+                <div class="produk-harga">Mulai Rp45.000/rim</div>
+                <div class="produk-spesifikasi">70gsm & 80gsm — A4, F4, Letter, berbagai merek</div>
+                <button class="btn btn-utama btn-kecil" onclick="tanyaProduk('Kertas')">Tanya / Pesan</button>
+                <div class="link-alternatif" onclick="cariAlternatif('Kertas')">🔄 Butuh tipe lain? Cari Alternatif</div>
+            </div>
+        </div>
+
+        <!-- Produk 5 -->
+        <div class="kartu-produk">
+            <div class="produk-gambar">🔋</div>
+            <div class="produk-info">
+                <div class="produk-nama">UPS 600VA - 1200VA</div>
+                <div class="produk-harga">Mulai Rp385.000</div>
+                <div class="produk-spesifikasi">Berbagai merek — stok siap kirim</div>
+                <button class="btn btn-utama btn-kecil" onclick="tanyaProduk('UPS')">Tanya / Pesan</button>
+                <div class="link-alternatif" onclick="cariAlternatif('UPS')">🔄 Butuh tipe lain? Cari Alternatif</div>
+            </div>
+        </div>
+
+        <!-- Produk 6 -->
+        <div class="kartu-produk">
+            <div class="produk-gambar">📠</div>
+            <div class="produk-info">
+                <div class="produk-nama">Scanner Dokumen</div>
+                <div class="produk-harga">Mulai Rp850.000</div>
+                <div class="produk-spesifikasi">Flatbed & Sheetfed — untuk kebutuhan kantor & klinik</div>
+                <button class="btn btn-utama btn-kecil" onclick="tanyaProduk('Scanner')">Tanya / Pesan</button>
+                <div class="link-alternatif" onclick="cariAlternatif('Scanner')">🔄 Butuh tipe lain? Cari Alternatif</div>
+            </div>
+        </div>
+
+        <!-- Produk 7 -->
+        <div class="kartu-produk">
+            <div class="produk-gambar">📶</div>
+            <div class="produk-info">
+                <div class="produk-nama">Router & Switch</div>
+                <div class="produk-harga">Mulai Rp155.000</div>
+                <div class="produk-spesifikasi">5-24 port — TP-Link, Mikrotik, Cisco</div>
+                <button class="btn btn-utama btn-kecil" onclick="tanyaProduk('Router/Switch')">Tanya / Pesan</button>
+                <div class="link-alternatif" onclick="cariAlternatif('Jaringan')">🔄 Butuh tipe lain? Cari Alternatif</div>
+            </div>
+        </div>
+
+        <!-- Produk 8 -->
+        <div class="kartu-produk">
+            <div class="produk-gambar">📹</div>
+            <div class="produk-info">
+                <div class="produk-nama">CCTV & Paket Pasang</div>
+                <div class="produk-harga">Mulai Rp1.450.000</div>
+                <div class="produk-spesifikasi">4-16 Channel — kamera indoor/outdoor + instalasi</div>
+                <button class="btn btn-utama btn-kecil" onclick="tanyaProduk('CCTV')">Tanya / Pesan</button>
+                <div class="link-alternatif" onclick="cariAlternatif('CCTV')">🔄 Butuh tipe lain? Cari Alternatif</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================================== -->
+<!-- BAGIAN PALING PENTING — MINTA DICARIKAN -->
+<!-- ================================== -->
+<section class="bagian-minta" id="minta">
+    <h2>❓ Tidak menemukan barang yang Anda cari?</h2>
+    <p>Joni akan bantu mencari dan membandingkan pilihan yang tersedia untuk Anda.</p>
+    <button class="btn btn-aksen" onclick="tampilkanForm()">📦 MINTA DICARIKAN</button>
+
+    <!-- FORM -->
+    <div class="form-container" id="formPermintaan">
+        <h3>📦 Kirim Kebutuhan Anda</h3>
+        <p class="catatan">⚠️ Tidak perlu login dulu — isi saja, langsung kirim</p>
+        
+        <form action="#" method="POST" onsubmit="return kirimPermintaan(event)">
+            <div class="form-grup">
+                <label for="kebutuhan">Saya membutuhkan: *</label>
+                <input type="text" id="kebutuhan" placeholder="Contoh: Lemari arsip ukuran besar" required>
+            </div>
+
+            <div class="form-grup">
+                <label for="jumlah">Jumlah: *</label>
+                <input type="text" id="jumlah" placeholder="Contoh: 5 buah / 1 lusin" required>
+            </div>
+
+            <div class="form-grup">
+                <label for="lokasi">Lokasi: *</label>
+                <input type="text" id="lokasi" placeholder="Contoh: Wonogiri / Solo / Jakarta Pusat" required>
+            </div>
+
+            <div class="form-grup">
+                <label for="budget">Budget (opsional):</label>
+                <input type="text" id="budget" placeholder="Contoh: Di bawah Rp500.000">
+            </div>
+
+            <div class="form-grup">
+                <label for="dibutuhkan">Dibutuhkan kapan: *</label>
+                <input type="text" id="dibutuhkan" placeholder="Contoh: Dalam 1 minggu / Sebelum 30 September" required>
+            </div>
+
+            <div class="form-grup">
+                <label for="keterangan">Spesifikasi/keterangan tambahan:</label>
+                <textarea id="keterangan" placeholder="Warna, merek yang diinginkan, ukuran, atau detail lainnya..."></textarea>
+            </div>
+
+            <div class="form-grup">
+                <label for="kontak">Nomor WhatsApp Anda: *</label>
+                <input type="tel" id="kontak" placeholder="Contoh: 0812xxxxxxxx — agar kami bisa hubungi Anda" required>
+            </div>
+
+            <button type="submit" class="btn btn-utama" style="width: 100%; margin-top: 0.5rem;">✅ KIRIM PERMINTAAN</button>
+        </form>
+    </div>
+</section>
+
+<!-- ================================== -->
+<!-- FOOTER -->
+<!-- ================================== -->
+<footer>
+    <h3 style="margin-bottom: 0.5rem;">JONI MARKET</h3>
+    <p>Punya kebutuhan? Kami bantu carikan.</p>
+    <p style="margin-top: 1rem; font-size: 0.85rem; color: #9ca3af;">📧 hubungi@jonimarket.com | 📱 WhatsApp: 08xx-xxxx-xxxx</p>
+    <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #6b7280;">© 2026 Joni Market. Semua hak dilindungi.</p>
+</footer>
+
+<!-- ================================== -->
+<!-- JAVASCRIPT -->
+<!-- ================================== -->
+<script>
+    // Tampilkan/sembunyikan form
+    function tampilkanForm() {
+        const form = document.getElementById('formPermintaan');
+        form.classList.toggle('tampil');
+        document.getElementById('minta').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Scroll ke kategori
+    function scrollKeKategori() {
+        document.getElementById('kategori').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Pilih kategori
+    function pilihKategori(nama) {
+        alert('📂 Kategori: ' + nama + '\n\nFitur ini akan menampilkan produk terkait.');
+    }
+
+    // Tanya produk — buka WhatsApp
+    function tanyaProduk(nama) {
+        const pesan = encodeURIComponent('Halo Joni, saya tertarik dengan: ' + nama + '. Boleh info harga dan stok terbaru?');
+        window.open('https://wa.me/6281234567890?text=' + pesan, '_blank');
+    }
+
+    // Cari alternatif
+    function cariAlternatif(jenis) {
+        tampilkanForm();
+        document.getElementById('kebutuhan').value = jenis + ' — cari alternatif merek/tipe lain';
+    }
+
+    // Kirim permintaan
+    function kirimPermintaan(e) {
+        e.preventDefault();
+        
+        const kebutuhan = document.getElementById('kebutuhan').value;
+        const jumlah = document.getElementById('jumlah').value;
+        const lokasi = document.getElementById('lokasi').value;
+        const budget = document.getElementById('budget').value || 'Tidak ada batas';
+        const dibutuhkan = document.getElementById('dibutuhkan').value;
+        const keterangan = document.getElementById('keterangan').value || '-';
+        const kontak = document.getElementById('kontak').value;
+
+        // Buat pesan WhatsApp
+        const pesan = encodeURIComponent(
+            '📦 PERMINTAAN BARU JONI MARKET\n\n' +
+            'Saya membutuhkan: ' + kebutuhan + '\n' +
+            'Jumlah: ' + jumlah + '\n' +
+            'Lokasi: ' + lokasi + '\n' +
+            'Budget: ' + budget + '\n' +
+            'Dibutuhkan: ' + dibutuhkan + '\n' +
+            'Keterangan: ' + keterangan + '\n' +
+            'Kontak: ' + kontak
+        );
+
+        // Buka WhatsApp dengan pesan lengkap
+        window.open('https://wa.me/6281234567890?text=' + pesan, '_blank');
+        
+        // Reset form & sembunyikan
+        document.getElementById('formPermintaan').reset();
+        document.getElementById('formPermintaan').classList.remove('tampil');
+        
+        alert('✅ Terima kasih! Permintaan Anda sedang diproses. Kami akan segera menghubungi Anda.');
+        
+        return false;
+    }
+</script>
+
+</body>
+</html>
