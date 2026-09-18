@@ -321,88 +321,6 @@
             text-align: center;
         }
 
-          /* Asisten Pencari Produk */
-.asisten-container {
-    background: linear-gradient(135deg, #eff6ff, #dbeafe);
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    margin-top: 3rem;
-}
-
-.asisten-container h2 {
-    color: var(--sekunder);
-    margin-bottom: 0.5rem;
-}
-
-.asisten-container p {
-    color: var(--abu);
-    margin-bottom: 1.5rem;
-}
-
-.asisten-input {
-    display: flex;
-    gap: 0.5rem;
-    max-width: 600px;
-    margin: 0 auto 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.asisten-input input {
-    flex: 1;
-    min-width: 250px;
-    padding: 0.9rem 1rem;
-    border: 2px solid #bfdbfe;
-    border-radius: 8px;
-    font-size: 1rem;
-}
-
-.asisten-input input:focus {
-    outline: none;
-    border-color: var(--utama);
-}
-
-.hasil-asisten {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: left;
-    display: none;
-}
-
-.hasil-asisten.tampil {
-    display: block;
-}
-
-.kartu-saran {
-    background: white;
-    border-radius: 10px;
-    padding: 1rem 1.2rem;
-    margin-bottom: 0.8rem;
-    border-left: 4px solid var(--utama);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-
-.kartu-saran h4 {
-    color: var(--sekunder);
-    margin-bottom: 0.3rem;
-}
-
-.kartu-saran .harga {
-    color: var(--utama);
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-}
-
-.kartu-saran .cocok {
-    font-size: 0.85rem;
-    color: #059669;
-    background: #d1fae5;
-    display: inline-block;
-    padding: 0.2rem 0.6rem;
-    border-radius: 12px;
-}
-
         /* FOOTER */
         footer {
             background-color: #1f2937;
@@ -618,24 +536,6 @@
 <!-- BAGIAN PALING PENTING — MINTA DICARIKAN -->
 <!-- ================================== -->
 <section class="bagian-minta" id="minta">
-
-
-    <!-- ================================== -->
-<!-- ASISTEN PENCARI PRODUK (AI SEDERHANA) -->
-<!-- ================================== -->
-<section class="asisten-container">
-    <h2>🤖 Asisten Pencari Produk</h2>
-    <p>Ketik apa yang kamu butuhkan, saya bantu carikan produk yang paling cocok!</p>
-    
-    <div class="asisten-input">
-        <input type="text" id="inputAsisten" placeholder="Contoh: Printer untuk kantor, budget di bawah 2 juta...">
-        <button class="btn btn-utama" onclick="cariProduk()">🔍 Cari</button>
-    </div>
-    
-    <div class="hasil-asisten" id="hasilAsisten">
-        <!-- Hasil pencarian akan muncul di sini -->
-    </div>
-</section>
     <h2>❓ Tidak menemukan barang yang Anda cari?</h2>
     <p>Joni akan bantu mencari dan membandingkan pilihan yang tersedia untuk Anda.</p>
     <button class="btn btn-aksen" onclick="tampilkanForm()">📦 MINTA DICARIKAN</button>
@@ -692,7 +592,7 @@
 <footer>
     <h3 style="margin-bottom: 0.5rem;">JONI MARKET</h3>
     <p>Punya kebutuhan? Kami bantu carikan.</p>
-    <p style="margin-top: 1rem; font-size: 0.85rem; color: #9ca3af;">📧 cristiano.winaldo@gmail.com | 📱 WhatsApp: 0858-1382-2624</p>
+    <p style="margin-top: 1rem; font-size: 0.85rem; color: #9ca3af;">📧 hubungi@jonimarket.com | 📱 WhatsApp: 0858-1382-2624</p>
     <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #6b7280;">© 2026 Joni Market. Semua hak dilindungi.</p>
 </footer>
 
@@ -761,114 +661,10 @@
         document.getElementById('formPermintaan').classList.remove('tampil');
         
         alert('✅ Terima kasih! Permintaan Anda sedang diproses. Kami akan segera menghubungi Anda.');
-
-        // Database produk untuk Asisten Pencari
-const databaseProduk = [
-    
-function cariProduk(){const e=document.getElementById("inputAsisten").value.toLowerCase().trim(),t=document.getElementById("hasilAsisten");if(!e)return void alert("Ketik dulu apa yang Anda butuhkan ya!");const n=[];databaseProduk.forEach(r=>{let a=0;r.kataKunci.forEach(r=>{e.includes(r.toLowerCase())&&a++}),a>0&&n.push({...r,skor:a})}),n.sort((e,t)=>t.skor-e.skor);if(0===n.length)t.innerHTML='<div class="kartu-saran" style="border-left-color: #f59e0b;"><h4>😕 Belum menemukan yang cocok?</h4><p>Coba gunakan kata kunci yang lebih sederhana, atau langsung gunakan fitur <strong>"Minta Dicarikan"</strong> di bawah ini. Kami akan bantu carikan secara manual!</p></div>';else{let e=<p style="margin-bottom: 1rem; color: var(--sekunder); font-weight: 500;">✅ Menemukan ${n.length} produk yang mungkin cocok untuk Anda:</p>;n.slice(0,3).forEach(t=>{e+=<div class="kartu-saran"><h4>${t.nama}</h4><div class="harga">${t.harga}</div><p style="font-size: 0.9rem; color: var(--abu); margin-bottom: 0.5rem;">${t.deskripsi}</p><span class="cocok">💡 ${t.kecocokan}</span></div>}),e+=<p style="margin-top: 1rem; text-align: center; font-size: 0.9rem;"><a href="#produk" style="color: var(--utama);">Lihat semua produk →</a> | <a href="#" onclick="tampilkanForm(); return false;" style="color: var(--utama);">Masih belum cocok? Minta dicarikan khusus →</a></p>,t.innerHTML=e}t.classList.add("tampil"),t.scrollIntoView({behavior:"smooth",block:"nearest"})}
-document.getElementById("inputAsisten").addEventListener("keypress",function(e){"Enter"===e.key&&cariProduk()});   
+        
         return false;
-
-        // ==========================================
-// ASISTEN PENCARI PRODUK
-// ==========================================
-const dataProduk = [
-    {nama:"Printer Multifungsi",kata:["printer","cetak","print","scan","tinta","kantor","mesin"],harga:"Mulai Rp1.250.000",info:"Print, Scan, Copy — Tinta infus, hemat biaya",saran:"Sangat cocok untuk kebutuhan kantor kecil"},
-    {nama:"Laptop Kantor",kata:["laptop","komputer","notebook","kerja","kantor","core i3","ryzen"],harga:"Mulai Rp3.990.000",info:"Core i3/Ryzen 3, RAM 8GB, SSD 256GB",saran:"Cocok untuk administrasi dan pekerjaan kantor"},
-    {nama:"Toner Cartridge",kata:["toner","tinta","cartridge","catridge","isi printer","laser"],harga:"Mulai Rp285.000",info:"Berbagai tipe — original & compatible tersedia",saran:"Untuk printer laser, hasil cetak tajam"},
-    {nama:"Kertas HVS & F4",kata:["kertas","hvs","f4","a4","print","tulis","rim","kantor"],harga:"Mulai Rp45.000/rim",info:"70gsm & 80gsm — A4, F4, Letter, berbagai merek",saran:"Kebutuhan pokok kantor dan sekolah"},
-    {nama:"UPS 600VA - 1200VA",kata:["ups","cadangan","listrik","mati lampu","stabilizer","daya"],harga:"Mulai Rp385.000",info:"Berbagai merek — stok siap kirim",saran:"Melindungi komputer dari mati listrik mendadak"},
-    {nama:"Scanner Dokumen",kata:["scanner","scan","pindai","dokumen","arsip","digital"],harga:"Mulai Rp850.000",info:"Flatbed & Sheetfed — untuk kebutuhan kantor & klinik",saran:"Untuk arsip digital dokumen dengan cepat"},
-    {nama:"Router & Switch",kata:["router","switch","jaringan","wifi","internet","lan","tp-link","mikrotik"],harga:"Mulai Rp155.000",info:"5-24 port — TP-Link, Mikrotik, Cisco",saran:"Membangun jaringan internet kantor atau rumah"},
-    {nama:"CCTV & Paket Pasang",kata:["cctv","kamera","pengawas","keamanan","pasang","monitor","rekam"],harga:"Mulai Rp1.450.000",info:"4-16 Channel — kamera indoor/outdoor + instalasi",saran:"Paket lengkap dengan pemasangan"},
-    {nama:"Paket Jaringan Lengkap",kata:["jaringan","internet","kabel","pasang","setting","wifi","kantor","warnet"],harga:"Hubungi kami",info:"Kami bantu rancang dan pasang jaringan sesuai kebutuhan",saran:"Untuk kantor baru atau pengembangan jaringan"},
-    {nama:"Kebutuhan Khusus",kata:["lain","lainnya","aneh","unik","sulit","jarang","khusus","tidak ada"],harga:"Hubungi kami",info:"Jika tidak menemukan yang Anda cari, kami bantu carikan",saran:"Gunakan fitur Minta Dicarikan untuk kebutuhan khusus"}
-];
-
-function cariProduk(){
-    const cari = document.getElementById("inputAsisten").value.toLowerCase().trim();
-    const tempatHasil = document.getElementById("hasilAsisten");
-    
-    if(!cari){alert("Ketik dulu apa yang Anda butuhkan ya!");return;}
-    
-    const hasil = [];
-    dataProduk.forEach(p => {
-        let nilai = 0;
-        p.kata.forEach(k => {if(cari.includes(k)) nilai++;});
-        if(nilai > 0) hasil.push({...p, nilai});
-    });
-    
-    hasil.sort((a,b) => b.nilai - a.nilai);
-    
-    if(hasil.length === 0){
-        tempatHasil.innerHTML = '<div class="kartu-saran" style="border-left-color:#f59e0b;"><h4>😕 Belum menemukan yang cocok?</h4><p>Coba kata kunci lebih sederhana, atau pakai fitur <strong>"Minta Dicarikan"</strong> di bawah ini ya!</p></div>';
-    } else {
-        let html = <p style="margin-bottom:1rem;color:var(--sekunder);font-weight:500;">✅ Menemukan ${hasil.length} produk yang mungkin cocok:</p>;
-        hasil.slice(0,3).forEach(p => {
-            html += <div class="kartu-saran"><h4>${p.nama}</h4><div class="harga">${p.harga}</div><p style="font-size:0.9rem;color:var(--abu);margin-bottom:0.5rem;">${p.info}</p><span class="cocok">💡 ${p.saran}</span></div>;
-        });
-        html += <p style="margin-top:1rem;text-align:center;font-size:0.9rem;"><a href="#produk" style="color:var(--utama);">Lihat semua produk →</a> | <a href="#" onclick="tampilkanForm();return false;" style="color:var(--utama);">Masih belum cocok? Minta dicarikan →</a></p>;
-        tempatHasil.innerHTML = html;
     }
-    tempatHasil.classList.add("tampil");
-}
-
-document.getElementById("inputAsisten").addEventListener("keypress", function(e){
-    if(e.key === "Enter") cariProduk( // ==========================================
-// ASISTEN PENCARI PRODUK
-// ==========================================
-const dataProduk = [
-    {nama:"Printer Multifungsi",kata:["printer","cetak","print","scan","tinta","kantor","mesin"],harga:"Mulai Rp1.250.000",info:"Print, Scan, Copy — Tinta infus, hemat biaya",saran:"Sangat cocok untuk kebutuhan kantor kecil"},
-    {nama:"Laptop Kantor",kata:["laptop","komputer","notebook","kerja","kantor","core i3","ryzen"],harga:"Mulai Rp3.990.000",info:"Core i3/Ryzen 3, RAM 8GB, SSD 256GB",saran:"Cocok untuk administrasi dan pekerjaan kantor"},
-    {nama:"Toner Cartridge",kata:["toner","tinta","cartridge","isi printer","laser"],harga:"Mulai Rp285.000",info:"Berbagai tipe — original & compatible tersedia",saran:"Untuk printer laser, hasil cetak tajam"},
-    {nama:"Kertas HVS & F4",kata:["kertas","hvs","f4","a4","print","tulis","rim","kantor"],harga:"Mulai Rp45.000/rim",info:"70gsm & 80gsm — A4, F4, Letter, berbagai merek",saran:"Kebutuhan pokok kantor dan sekolah"},
-    {nama:"UPS 600VA - 1200VA",kata:["ups","cadangan","listrik","mati lampu","stabilizer","daya"],harga:"Mulai Rp385.000",info:"Berbagai merek — stok siap kirim",saran:"Melindungi komputer dari mati listrik mendadak"},
-    {nama:"Scanner Dokumen",kata:["scanner","scan","pindai","dokumen","arsip","digital"],harga:"Mulai Rp850.000",info:"Flatbed & Sheetfed — untuk kebutuhan kantor & klinik",saran:"Untuk arsip digital dokumen dengan cepat"},
-    {nama:"Router & Switch",kata:["router","switch","jaringan","wifi","internet","lan","tp-link","mikrotik"],harga:"Mulai Rp155.000",info:"5-24 port — TP-Link, Mikrotik, Cisco",saran:"Membangun jaringan internet kantor atau rumah"},
-    {nama:"CCTV & Paket Pasang",kata:["cctv","kamera","pengawas","keamanan","pasang","monitor","rekam"],harga:"Mulai Rp1.450.000",info:"4-16 Channel — kamera indoor/outdoor + instalasi",saran:"Paket lengkap dengan pemasangan"},
-    {nama:"Paket Jaringan Lengkap",kata:["jaringan","internet","kabel","pasang","setting","wifi","kantor"],harga:"Hubungi kami",info:"Kami bantu rancang dan pasang jaringan sesuai kebutuhan",saran:"Untuk kantor baru atau pengembangan jaringan"},
-    {nama:"Kebutuhan Khusus",kata:["lain","lainnya","aneh","unik","sulit","jarang","khusus","tidak ada"],harga:"Hubungi kami",info:"Jika tidak menemukan yang Anda cari, kami bantu carikan",saran:"Gunakan fitur Minta Dicarikan untuk kebutuhan khusus"}
-];
-
-function cariProduk(){
-    const cari = document.getElementById("inputAsisten").value.toLowerCase().trim();
-    const tempatHasil = document.getElementById("hasilAsisten");
-    
-    if(!cari){alert("Ketik dulu apa yang Anda butuhkan ya!");return;}
-    
-    const hasil = [];
-    dataProduk.forEach(p => {
-        let nilai = 0;
-        p.kata.forEach(k => {if(cari.includes(k)) nilai++;});
-        if(nilai > 0) hasil.push({...p, nilai});
-    });
-    
-    hasil.sort((a,b) => b.nilai - a.nilai);
-    
-    if(hasil.length === 0){
-        tempatHasil.innerHTML = '<div class="kartu-saran" style="border-left-color:#f59e0b;"><h4>😕 Belum menemukan yang cocok?</h4><p>Coba kata kunci lebih sederhana, atau pakai fitur <strong>"Minta Dicarikan"</strong> di bawah ini ya!</p></div>';
-    } else {
-        let html = '<p style="margin-bottom:1rem;color:var(--sekunder);font-weight:500;">✅ Menemukan ' + hasil.length + ' produk yang mungkin cocok:</p>';
-        hasil.slice(0,3).forEach(p => {
-            html += '<div class="kartu-saran"><h4>' + p.nama + '</h4><div class="harga">' + p.harga + '</div><p style="font-size:0.9rem;color:var(--abu);margin-bottom:0.5rem;">' + p.info + '</p><span class="cocok">💡 ' + p.saran + '</span></div>';
-        });
-        html += '<p style="margin-top:1rem;text-align:center;font-size:0.9rem;"><a href="#produk" style="color:var(--utama);">Lihat semua produk →</a> | <a href="#" onclick="tampilkanForm();return false;" style="color:var(--utama);">Masih belum cocok? Minta dicarikan →</a></p>';
-        tempatHasil.innerHTML = html;
-    }
-    tempatHasil.classList.add("tampil");
-}
-
-document.addEventListener("DOMContentLoaded", function(){
-    const input = document.getElementById("inputAsisten");
-    if(input){
-        input.addEventListener("keypress", function(e){
-            if(e.key === "Enter") cariProduk();
-        });
-    }
-}); );
-});
-    }
-</script>  
+</script>
 
 </body>
 </html>
