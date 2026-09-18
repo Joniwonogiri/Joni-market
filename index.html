@@ -322,6 +322,181 @@
         }
 
         /* FOOTER */
+
+        /* ================================== */
+/* JOKO AI — ASISTEN PINTAR JONI MARKET */
+/* ================================== */
+.joko-ai-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+}
+
+.joko-ai-buka {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: white;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.joko-ai-buka:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.5);
+}
+
+.joko-ai-kotak {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+    width: 380px;
+    max-width: calc(100vw - 40px);
+    height: 520px;
+    max-height: calc(100vh - 120px);
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.18);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.joko-ai-kotak.terbuka {
+    transform: scale(1);
+}
+
+.joko-ai-header {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    color: white;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.joko-ai-header h3 {
+    margin: 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.joko-ai-tutup {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.joko-ai-tutup:hover {
+    opacity: 1;
+}
+
+.joko-ai-pesan-area {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background: #f8fafc;
+}
+
+.pesan {
+    margin-bottom: 14px;
+    max-width: 85%;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.pesan.ai {
+    background: #e0f2fe;
+    color: #0c4a6e;
+    padding: 10px 14px;
+    border-radius: 16px 16px 16px 4px;
+    margin-right: auto;
+}
+
+.pesan.manusia {
+    background: #3b82f6;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 16px 16px 4px 16px;
+    margin-left: auto;
+}
+
+.pesan-sedang {
+    font-style: italic;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.joko-ai-input-area {
+    padding: 14px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    gap: 8px;
+    background: white;
+}
+
+.joko-ai-input-area input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 24px;
+    font-size: 14px;
+    outline: none;
+}
+
+.joko-ai-input-area input:focus {
+    border-color: #3b82f6;
+}
+
+.joko-ai-kirim {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f97316;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.joko-ai-saran-cepat {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.saran-cepat-btn {
+    background: white;
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.saran-cepat-btn:hover {
+    background: #dbeafe;
+}
         footer {
             background-color: #1f2937;
             color: white;
@@ -666,5 +841,157 @@
     }
 </script>
 
+    // ==========================================
+// JOKO AI — OTAK KECERDASAN BUATAN
+// ==========================================
+const pengetahuanJokoAI = {
+    produk: {
+        "printer": {nama: "Printer Multifungsi", harga: "Mulai Rp1.250.000", info: "Print, Scan, Copy — tinta infus, hemat biaya. Sangat cocok untuk kantor kecil atau rumah."},
+        "laptop": {nama: "Laptop Kantor", harga: "Mulai Rp3.990.000", info: "Core i3/Ryzen 3, RAM 8GB, SSD 256GB. Cocok untuk administrasi, sekolah, dan pekerjaan sehari-hari."},
+        "toner": {nama: "Toner Cartridge", harga: "Mulai Rp285.000", info: "Berbagai tipe, original & compatible tersedia. Hasil cetak tajam dan awet."},
+        "kertas": {nama: "Kertas HVS & F4", harga: "Mulai Rp45.000/rim", info: "70gsm & 80gsm — A4, F4, Letter. Berbagai merek, siap kirim ke seluruh Wonogiri."},
+        "ups": {nama: "UPS 600VA - 1200VA", harga: "Mulai Rp385.000", info: "Lindungi komputer dari mati listrik mendadak. Berbagai merek tersedia, stok siap kirim."},
+        "scanner": {nama: "Scanner Dokumen", harga: "Mulai Rp850.000", info: "Flatbed & Sheetfed. Digitalisasi dokumen jadi lebih cepat dan rapi."},
+        "router": {nama: "Router & Switch", harga: "Mulai Rp155.000", info: "5-24 port — TP-Link, Mikrotik, Cisco. Bangun jaringan internet yang stabil."},
+        "cctv": {nama: "CCTV & Paket Pasang", harga: "Mulai Rp1.450.000", info: "4-16 Channel, kamera indoor/outdoor + instalasi lengkap. Jaga keamanan rumah & toko Anda."},
+        "jaringan": {nama: "Paket Jaringan Lengkap", harga: "Hubungi kami", info: "Kami bantu rancang dan pasang jaringan sesuai kebutuhan kantor atau rumah Anda."}
+    },
+    
+    jawabanUmum: {
+        "halo": "👋 Halo juga! Senang sekali bisa bertemu denganmu! Ada yang bisa saya bantu hari ini? 😊",
+        "hai": "👋 Hai! Siap membantu nih! Coba tanya apa saja yang kamu butuhkan ya!",
+        "siapa kamu": "Saya adalah <strong>JOKO AI</strong>, asisten pintar dari JONI MARKET! 🤖 Saya siap membantu menjawab pertanyaan, merekomendasikan produk, dan membantu kamu menemukan barang yang kamu cari. Punya pertanyaan?",
+        "jam buka": "Kami siap melayani kamu setiap hari dari jam <strong>08.00 - 21.00 WIB</strong>! 🕐 Kalau di luar jam tersebut, tetap kirim pesan ya, kami akan balas besok pagi!",
+        "alamat": "Kami berbasis di <strong>Wonogiri</strong> dan melayani pengiriman ke seluruh Indonesia! 📍 Untuk pertemuan langsung, silakan hubungi kami lewat WhatsApp dulu ya agar kami bisa atur waktu terbaik untuk kamu.",
+        "cara pesan": "Sangat mudah! 📝 Ada 2 cara:<br>1️⃣ Gunakan tombol <strong>\"Minta Dicarikan\"</strong> di website, isi formulirnya<br>2️⃣ Langsung hubungi kami via WhatsApp di <strong>0858-1382-2624</strong><br>Kami akan segera proses pesanan kamu! 😊",
+        "pengiriman": "Kami kirim ke seluruh Indonesia! 🚚 Untuk area Wonogiri dan sekitarnya bisa kami antar langsung. Luar kota pakai jasa ekspedisi terpercaya seperti JNE, J&T, Pos Indonesia, dll.",
+        "pembayaran": "Bisa lewat <strong>Transfer Bank, COD (khusus area Wonogiri), dan QRIS</strong>! 💳 Semua dijamin aman dan transparan. Silakan tanya detailnya saat memesan ya!",
+        "garansi": "Tentu saja! 💪 Semua produk kami punya garansi sesuai ketentuan distributor. Kalau ada kendala, hubungi kami dan kami bantu selesaikan secepatnya.",
+        "barang khusus": "Wah, itu kelebihan kami! ✨ Kalau barangnya jarang, sulit dicari, atau khusus, gunakan fitur <strong>\"Minta Dicarikan\"</strong> di website. Isi saja kebutuhanmu, biarkan kami yang mencarikan untukmu!",
+        "terima kasih": "Sama-sama! 🙏 Semoga puas dengan pelayanan kami. Jangan ragu untuk bertanya lagi kapan saja ya!",
+        "produk apa saja": "Kami menyediakan berbagai kebutuhan kantor & bisnis! 📦<br>🖨️ Printer & Perlengkapan<br>💻 Laptop & Komputer<br>📹 CCTV & Keamanan<br>📡 Jaringan & Internet<br>📝 ATK & Perlengkapan Kantor<br>🔬 Laboratorium & Klinik<br>✨ Kebutuhan Khusus — kami bantu carikan!<br><br>Ada yang spesifik sedang kamu cari?"
+    }
+};
+
+function toggleJokoAI() {
+    const kotak = document.getElementById('jokoAIKotak');
+    kotak.classList.toggle('terbuka');
+}
+
+function kirimSaran(teks) {
+    document.getElementById('jokoAIInput').value = teks;
+    kirimPesanJokoAI();
+}
+
+function tambahPesan(isi, pengirim) {
+    const area = document.getElementById('jokoAIPesan');
+    const div = document.createElement('div');
+    div.className = 'pesan ' + pengirim;
+    div.innerHTML = isi;
+    area.appendChild(div);
+    area.scrollTop = area.scrollHeight;
+}
+
+function cariJawaban(pesanPengguna) {
+    const teks = pesanPengguna.toLowerCase().trim();
+    
+    // Cek produk
+    for(const [kunci, data] of Object.entries(pengetahuanJokoAI.produk)) {
+        if(teks.includes(kunci)) {
+            return 📦 <strong>${data.nama}</strong><br>💰 ${data.harga}<br>📝 ${data.info};
+        }
+    }
+    
+    // Cek jawaban umum
+    for(const [kunci, jawaban] of Object.entries(pengetahuanJokoAI.jawabanUmum)) {
+        if(teks.includes(kunci)) {
+            return jawaban;
+        }
+    }
+    
+    // Jawaban cerdas berbasis kata kunci
+    if(teks.includes('bisa') && teks.includes('membantu')) {
+        return Tentu saja bisa! 💪 Saya siap membantu kamu:<br>✅ Mencarikan produk yang tepat<br>✅ Menjawab pertanyaan tentang harga & spesifikasi<br>✅ Membantu proses pemesanan<br>✅ Mencarikan barang khusus yang jarang ada<br><br>Apa yang sedang kamu cari?;
+    }
+    
+    if(teks.includes('rekomendasi') || teks.includes('mau')) {
+        return Tentu! Berikut beberapa rekomendasi populer kami: 🔥<br><br>🖨️ <strong>Printer Multifungsi</strong> — Rp1.250.000<br>💻 <strong>Laptop Kantor</strong> — Rp3.990.000<br>📹 <strong>CCTV Paket Pasang</strong> — Rp1.450.000<br><br>Atau beri tahu saya <strong>budget</strong> dan <strong>kebutuhan</strong> kamu, saya bantu pilihkan yang paling pas! 😊;
+    }
+    
+    if(teks.includes('harga') || teks.includes('mahal') || teks.includes('murah')) {
+        return Kami menawarkan harga yang sangat bersaing! 💰 Mulai dari Rp45.000 untuk kebutuhan dasar hingga Rp jutaan untuk perangkat lengkap. Kualitas tetap nomor satu. Coba sebutkan barang yang kamu cari, saya kasih tahu harganya ya! 😊;
+    }
+    
+    if(teks.includes('di mana') || teks.includes('lokasi') || teks.includes('alamat')) {
+        return 📍 Kami berbasis di <strong>Wonogiri</strong> dan melayani seluruh Indonesia! Kalau mau ketemu langsung, silakan hubungi WhatsApp kami dulu untuk atur pertemuan ya: <strong>0858-1382-2624</strong> 🙏;
+    }
+    
+    if(teks.includes('bantuan') || teks.includes('sulit') || teks.includes('bingung')) {
+        return Tenang, jangan bingung! 😊 Itulah kenapa saya ada di sini. Coba ceritakan:<br>1️⃣ Barang apa yang kamu butuhkan?<br>2️⃣ Untuk keperluan apa?<br>3️⃣ Berapa budget kamu?<br><br>Saya akan bantu pilihkan yang paling cocok untuk kamu! ✨;
+    }
+    
+    // Jawaban default
+    return Hmm, saya sedang belajar terus nih! 🤔 Pertanyaan menarik sekali. Untuk lebih akuratnya, silakan:<br>👉 Gunakan fitur <strong>"Minta Dicarikan"</strong> di website, atau<br>👉 Langsung hubungi Joni via WhatsApp: <strong>0858-1382-2624</strong><br><br>Beliau akan bantu carikan barang yang kamu cari dengan tepat! 🙏✨;
+}
+
+async function kirimPesanJokoAI() {
+    const input = document.getElementById('jokoAIInput');
+    const pesan = input.value.trim();
+    if(!pesan) return;
+    
+    // Tampilkan pesan manusia
+    tambahPesan(pesan, 'manusia');
+    input.value = '';
+    
+    // Tampilkan "sedang mengetik"
+    const area = document.getElementById('jokoAIPesan');
+    const sedang = document.createElement('div');
+    sedang.className = 'pesan ai pesan-sedang';
+    sedang.innerHTML = 'JOKO AI sedang berpikir...';
+    area.appendChild(sedang);
+    area.scrollTop = area.scrollHeight;
+    
+    // Simulasi berpikir sebentar
+    await new Promise(res => setTimeout(res, 700 + Math.random() * 500));
+    sedang.remove();
+    
+    // Cari jawaban
+    const jawaban = cariJawaban(pesan);
+    tambahPesan(jawaban, 'ai');
+}
+
 </body>
+
+   <!-- ================================== -->
+<!-- JOKO AI — ASISTEN PINTAR JONI MARKET -->
+<!-- ================================== -->
+<div class="joko-ai-container">
+    <button class="joko-ai-buka" onclick="toggleJokoAI()">🤖</button>
+    
+    <div class="joko-ai-kotak" id="jokoAIKotak">
+        <div class="joko-ai-header">
+            <h3>🤖 JOKO AI — Asisten Pintar</h3>
+            <button class="joko-ai-tutup" onclick="toggleJokoAI()">×</button>
+        </div>
+        
+        <div class="joko-ai-pesan-area" id="jokoAIPesan">
+            <div class="pesan ai">
+                👋 Halo! Saya <strong>JOKO AI</strong>, asisten pintar dari JONI MARKET! 🛒<br><>Apa yang bisa saya bantu hari ini? Silakan tanya apa saja, atau klik salah satu saran di bawah ya 😊
+                
+                <div class="joko-ai-saran-cepat">
+                    <button class="saran-cepat-btn" onclick="kirimSaran('Apa saja produk yang tersedia?')">📦 Produk tersedia</button>
+                    <button class="saran-cepat-btn" onclick="kirimSaran('Saya butuh printer, rekomendasi dong')">🖨️ Cari printer</button>
+                    <button class="saran-cepat-btn" onclick="kirimSaran('Berapa harga laptop?')">💻 Harga laptop</button>
+                    <button class="saran-cepat-btn" onclick="kirimSaran('Bagaimana cara pesan?')">📝 Cara pesan</button>
+                    <button class="saran-cepat-btn" onclick="kirimSaran('Saya butuh barang khusus')">✨ Barang khusus</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="joko-ai-input-area">
+            <input type="text" id="jokoAIInput" placeholder="Ketik pertanyaanmu di sini..." onkeypress="if(event.key==='Enter') kirimPesanJokoAI()">
+            <button class="joko-ai-kirim" onclick="kirimPesanJokoAI()">➤</button>
+        </div>
+    </div>
+</div> 
 </html>
