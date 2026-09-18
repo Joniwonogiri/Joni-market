@@ -96,6 +96,31 @@
         .saran-cepat-btn{background:white;border:1px solid #bfdbfe;color:#1e40af;padding:6px 12px;border-radius:16px;font-size:12px;cursor:pointer;transition:all .2s}
         .saran-cepat-btn:hover{background:#dbeafe}
         @media(max-width:768px){.header-inner{flex-direction:column;gap:.5rem;text-align:center}nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.3rem}nav a{margin:0 .5rem}.hero h1{font-size:1.5rem}}
+    ... (kode CSS yang lain) ...
+
+/* ================================== */
+/* KATALOG ATK PT ATM */
+/* ================================== */
+.katalog-atk-header{background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:16px;padding:2.5rem 2rem;text-align:center;margin-top:3rem}
+.katalog-atk-header h2{color:#92400e;margin-bottom:.5rem}
+.katalog-atk-header p{color:#78350f;margin-bottom:1rem;font-size:1.05rem}
+.katalog-atk-info{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:1rem;font-size:.9rem}
+.katalog-atk-info span{background:white;padding:.5rem 1rem;border-radius:20px;color:#92400e;font-weight:500}
+.grid-katalog-atk{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:2rem}
+.kartu-atk{background:white;border:1px solid #e5e7eb;border-radius:12px;padding:1.2rem;transition:all .3s;display:flex;flex-direction:column}
+.kartu-atk:hover{box-shadow:0 6px 20px rgba(0,0,0,.08);transform:translateY(-3px);border-color:#f59e0b}
+.kartu-atk-kode{font-size:.75rem;color:#6b7280;margin-bottom:.3rem}
+.kartu-atk-nama{font-weight:600;font-size:.95rem;color:#1f2937;margin-bottom:.5rem;flex:1;line-height:1.4}
+.kartu-atk-satuan{font-size:.8rem;color:#6b7280;margin-bottom:.5rem}
+.kartu-atk-harga{font-size:1.2rem;font-weight:700;color:#b45309;margin-bottom:1rem}
+.kartu-atk-aksi{display:flex;gap:.5rem}
+.kartu-atk-btn{flex:1;padding:.5rem;font-size:.8rem;border-radius:6px;border:none;cursor:pointer;font-weight:500;text-align:center;text-decoration:none;transition:all .2s}
+.kartu-atk-btn-detail{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe}
+.kartu-atk-btn-detail:hover{background:#dbeafe}
+.kartu-atk-btn-pesan{background:#f59e0b;color:white}
+.kartu-atk-btn-pesan:hover{background:#d97706}}
+... (semua kode CSS katalog) ..
+    
     </style>
 </head>
 <body>
@@ -106,7 +131,7 @@
             <a href="#beranda">🏠 Beranda</a>
             <a href="#kategori">Kategori</a>
             <a href="#produk">Produk Pilihan</a>
-            <a href="#minta">Minta Dicarikan</a>
+            <a href="#katalogatk">📝 Katalog ATK</a>
         </nav>
     </div>
 </header>
@@ -231,6 +256,288 @@
     <div class="hasil-asisten" id="hasilAsisten"></div>
 </section>
 
+<!-- ================================== -->
+<!-- KATALOG ATK PT ATM AGUSTUS 2026 -->
+<!-- ================================== -->
+<section class="katalog-atk-header">
+    <h2>📝 Katalog ATK PT ATM — Agustus 2026</h2>
+    <p>Daftar harga Alat Tulis Kantor terlengkap dan terpercaya. Klik "Lihat Detail" untuk spesifikasi lengkap, atau "Tanya/Pesan" untuk konsultasi langsung.</p>
+    <div class="katalog-atk-info">
+        <span>📅 Berlaku: Agustus 2026</span>
+        <span>🏢 PT ATM</span>
+        <span>✅ Harga Nego</span>
+    </div>
+</section>
+
+<section class="section" style="margin-top:1rem">
+    <div class="grid-katalog-atk" id="gridKatalogATK">
+        <!-- Produk 1 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 001</div>
+            <div class="kartu-atk-nama">✉️ Amplop (Putih polos, nomor 104, isi 100 Pcs)</div>
+            <div class="kartu-atk-satuan">Satuan: Pack</div>
+            <div class="kartu-atk-harga">Rp22.200</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/amplop-putih-polos-90-pps-104pps-80gr" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Amplop Putih 104')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 2 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 002</div>
+            <div class="kartu-atk-nama">🖊️ Ballpoint (Motif Batik)</div>
+            <div class="kartu-atk-satuan">Satuan: Lusin</div>
+            <div class="kartu-atk-harga">Rp58.275</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/pulpen-joyko-motif-batik-per-lusin" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Ballpoint Motif Batik')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 3 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 003</div>
+            <div class="kartu-atk-nama">📎 Binder Clip No. 105 (warna hitam)</div>
+            <div class="kartu-atk-satuan">Satuan: Dus</div>
+            <div class="kartu-atk-harga">Rp10.545</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/binder-clip-penjepit-kertas-klip-binder-no-105-no-107-no-111-no-155-no-200" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Binder Clip No.105')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 4 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 004</div>
+            <div class="kartu-atk-nama">📎 Binder Clip No. 107 (warna hitam)</div>
+            <div class="kartu-atk-satuan">Satuan: Dus</div>
+            <div class="kartu-atk-harga">Rp11.100</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/binder-clip-penjepit-kertas-klip-binder-no-105-no-107-no-111-no-155-no-200" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Binder Clip No.107')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 5 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 005</div>
+            <div class="kartu-atk-nama">📎 Binder Clip No. 111 (Warna hitam)</div>
+            <div class="kartu-atk-satuan">Satuan: Dus</div>
+            <div class="kartu-atk-harga">Rp15.096</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/binder-clip-penjepit-kertas-klip-binder-no-105-no-107-no-111-no-155-no-200" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Binder Clip No.111')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 6 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 006</div>
+            <div class="kartu-atk-nama">📎 Binder Clip No. 155 (warna hitam)</div>
+            <div class="kartu-atk-satuan">Satuan: Dus</div>
+            <div class="kartu-atk-harga">Rp17.982</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/binder-clip-penjepit-kertas-klip-binder-no-105-no-107-no-111-no-155-no-200" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Binder Clip No.155')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 7 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 007</div>
+            <div class="kartu-atk-nama">📎 Binder Clip No. 200 (Warna hitam)</div>
+            <div class="kartu-atk-satuan">Satuan: Dus</div>
+            <div class="kartu-atk-harga">Rp28.860</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/binder-clip-penjepit-kertas-klip-binder-no-105-no-107-no-111-no-155-no-200" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Binder Clip No.200')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 8 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 008</div>
+            <div class="kartu-atk-nama">📒 Buku Kwitansi (Isi 40 lembar)</div>
+            <div class="kartu-atk-satuan">Satuan: Buku</div>
+            <div class="kartu-atk-harga">Rp9.102</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/buku-kwitansi-toko-kantor-usaha-40-50-lembar" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Buku Kwitansi 40 lembar')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 9 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 009</div>
+            <div class="kartu-atk-nama">📓 Buku Tulis Ekspedisi (isi 100 lembar)</div>
+            <div class="kartu-atk-satuan">Satuan: Pcs</div>
+            <div class="kartu-atk-harga">Rp22.200</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/buku-ekspedisi-isi-100-lembar" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Buku Ekspedisi 100 lembar')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 10 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 010</div>
+            <div class="kartu-atk-nama">📓 Buku Tulis Folio (isi 200 lembar)</div>
+            <div class="kartu-atk-satuan">Satuan: Pcs</div>
+            <div class="kartu-atk-harga">Rp66.600</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/buku-folio-hard-cover-isi-100-lembar-200-lembar" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Buku Folio 200 lembar')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 11 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 011</div>
+            <div class="kartu-atk-nama">📎 Isi Staples No. 10 (isi 20 dus)</div>
+            <div class="kartu-atk-satuan">Satuan: Pack</div>
+            <div class="kartu-atk-harga">Rp55.500</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/isi-staples-kenko-kecil-no-10-per-dus-isi-20-pack" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Isi Staples No.10')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 12 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 012</div>
+            <div class="kartu-atk-nama">📁 Map 5001 Snelhecter (isi 50 pcs)</div>
+            <div class="kartu-atk-satuan">Satuan: Dus</div>
+            <div class="kartu-atk-harga">Rp188.700</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/map-kertas-5001-snelhecter-per-box-biola" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Map Snelhecter 5001')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 13 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 013</div>
+            <div class="kartu-atk-nama">📁 Map Plastik (tutup kancing)</div>
+            <div class="kartu-atk-satuan">Satuan: Pack</div>
+            <div class="kartu-atk-harga">Rp51.060</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/map-plastik-tutup-kancing-per-lusin" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Map Plastik Tutup Kancing')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 14 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 014</div>
+            <div class="kartu-atk-nama">📁 Map Biasa Folio (isi 50 pcs)</div>
+            <div class="kartu-atk-satuan">Satuan: Pack</div>
+            <div class="kartu-atk-harga">Rp166.500</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/stop-map-biola-folio-5002-isi-50-per-box" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Map Biasa Folio')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 15 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 015</div>
+            <div class="kartu-atk-nama">📁 Map Business File (plastik, isi 12 pcs)</div>
+            <div class="kartu-atk-satuan">Satuan: Pack</div>
+            <div class="kartu-atk-harga">Rp69.375</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/map-plastik-business-file-snellhecter-f4" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Map Business File')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 16 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 016</div>
+            <div class="kartu-atk-nama">📁 Map Zipper Bag (resleting)</div>
+            <div class="kartu-atk-satuan">Satuan: Buah</div>
+            <div class="kartu-atk-harga">Rp22.200</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/map-zipper-resleting-uk-folio" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Map Zipper Bag')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 17 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 017</div>
+            <div class="kartu-atk-nama">📂 Odner (plastik, ukuran folio)</div>
+            <div class="kartu-atk-satuan">Satuan: Buah</div>
+            <div class="kartu-atk-harga">Rp55.500</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/odner-f4-7cm-per-buah" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Odner Folio')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 18 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 018</div>
+            <div class="kartu-atk-nama">📏 Penggaris Plastik (30 cm)</div>
+            <div class="kartu-atk-satuan">Satuan: Buah</div>
+            <div class="kartu-atk-harga">Rp12.210</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/penggaris-plastik-30cm" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Penggaris 30cm')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 19 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 019</div>
+            <div class="kartu-atk-nama">🧽 Penghapus Pensil (ukuran sedang)</div>
+            <div class="kartu-atk-satuan">Satuan: Pcs</div>
+            <div class="kartu-atk-harga">Rp8.325</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/1-pcs-penghapus-pensil-panjang-joyko" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Penghapus Pensil')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 20 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 020</div>
+            <div class="kartu-atk-nama">✏️ Pensil 2B</div>
+            <div class="kartu-atk-satuan">Satuan: Lusin</div>
+            <div class="kartu-atk-harga">Rp27.750</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/pensil-kayu-tulis-2b-joyko-per-box-isi-12-pcs" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Pensil 2B')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 21 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 021</div>
+            <div class="kartu-atk-nama">📌 Post It "Sign here" (5 warna)</div>
+            <div class="kartu-atk-satuan">Satuan: Pack</div>
+            <div class="kartu-atk-harga">Rp29.970</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/memo-penanda-sign-here-joyko-im-37" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Post It Sign Here')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 22 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 022</div>
+            <div class="kartu-atk-nama">📝 Post Note (76×76mm, isi 100 lembar)</div>
+            <div class="kartu-atk-satuan">Satuan: Pcs</div>
+            <div class="kartu-atk-harga">Rp16.650</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/3m-post-it-654-3in-x-3in-76mmx76mm-isi-100-per-pad" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Post Note 76x76')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 23 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 023</div>
+            <div class="kartu-atk-nama">🖊️ Spidol Permanen (warna hitam)</div>
+            <div class="kartu-atk-satuan">Satuan: Buah</div>
+            <div class="kartu-atk-harga">Rp16.650</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/spidol-snowman-permanent-marker" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Spidol Permanen Hitam')">💬 Pesan</button>
+            </div>
+        </div>
+        <!-- Produk 24 -->
+        <div class="kartu-atk">
+            <div class="kartu-atk-kode">Kode: 024</div>
+            <div class="kartu-atk-nama">📎 Staples No. 10</div>
+            <div class="kartu-atk-satuan">Satuan: Buah</div>
+            <div class="kartu-atk-harga">Rp25.530</div>
+            <div class="kartu-atk-aksi">
+                <a href="https://katalog.inaproc.id/andara-tata-mitra/staples-no-10-joyko-hd-10d" target="_blank" class="kartu-atk-btn kartu-atk-btn-detail">🔍 Detail</a>
+                <button class="kartu-atk-btn kartu-atk-btn-pesan" onclick="tanyaProduk('Staples No.10')">💬 Pesan</button>
+            </div>
+        </div>
+    </div>
+</section>
+    
 <section class="bagian-minta" id="minta">
     <h2>❓ Tidak menemukan barang yang Anda cari?</h2>
     <p>Joni akan bantu mencari dan membandingkan pilihan yang tersedia untuk Anda.</p>
