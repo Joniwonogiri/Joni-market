@@ -121,6 +121,26 @@
 .kartu-atk-btn-pesan:hover{background:#d97706}}
 ... (semua kode CSS katalog) ..
     
+   
+  /* ================================== */
+/* KATALOG VEROTY PERKANTORAN */
+/* ================================== */
+.katalog-veroty-header{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border-radius:16px;padding:2.5rem 2rem;text-align:center;margin-top:3rem}
+.katalog-veroty-header h2{color:#065f46;margin-bottom:.5rem}
+.katalog-veroty-header p{color:#047857;margin-bottom:1rem;font-size:1.05rem}
+.katalog-veroty-notice{background:#fef3c7;color:#92400e;padding:.6rem 1.2rem;border-radius:20px;display:inline-block;font-size:.9rem;font-weight:500;margin-top:.5rem}
+.grid-veroty{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-top:2rem}
+.kartu-veroty{background:white;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column}
+.kartu-veroty:hover{box-shadow:0 6px 20px rgba(0,0,0,.1);transform:translateY(-3px);border-color:#10b981}
+.kartu-veroty-gambar{background:linear-gradient(135deg,#f0fdf4,#dcfce7);height:160px;display:flex;align-items:center;justify-content:center;font-size:4rem;border-bottom:1px solid #e5e7eb}
+.kartu-veroty-body{padding:1rem;flex:1;display:flex;flex-direction:column}
+.kartu-veroty-kode{font-size:.75rem;color:#6b7280;margin-bottom:.3rem}
+.kartu-veroty-nama{font-weight:600;font-size:.95rem;color:#1f2937;margin-bottom:.5rem;line-height:1.4}
+.kartu-veroty-spesifikasi{font-size:.8rem;color:#6b7280;margin-bottom:.8rem;flex:1}
+.kartu-veroty-harga-disensor{background:#f3f4f6;color:#9ca3af;padding:.3rem .6rem;border-radius:6px;font-size:.8rem;text-align:center;margin-bottom:.8rem;font-weight:500;letter-spacing:2px}
+.kartu-veroty-btn{width:100%;padding:.5rem;background:#10b981;color:white;border:none;border-radius:6px;font-size:.85rem;font-weight:500;cursor:pointer;text-align:center;text-decoration:none;transition:background .2s}
+.kartu-veroty-btn:hover{background:#059669}  
+   
     </style>
 </head>
 <body>
@@ -132,6 +152,7 @@
             <a href="#kategori">Kategori</a>
             <a href="#produk">Produk Pilihan</a>
             <a href="#katalogatk">📝 Katalog ATK</a>
+            <a href="#veroty">🪑 Veroty</a>
         </nav>
     </div>
 </header>
@@ -538,7 +559,158 @@
     </div>
 </section>
     
-<section class="bagian-minta" id="minta">
+
+    
+   <!-- ================================== -->
+<!-- KATALOG PRODUK PERKANTORAN VEROTY -->
+<!-- Harga disensor, hubungi WA untuk detail -->
+<!-- ================================== -->
+<section class="katalog-veroty-header">
+    <h2>🪑 Katalog Produk Perkantoran VEROTY</h2>
+    <p>Koleksi lengkap furnitur perkantoran berkualitas. Harga & link detail disensor — hubungi kami untuk informasi lengkap!</p>
+    <div class="katalog-veroty-notice">💰 Harga disensor — Chat WhatsApp untuk tanya harga & spesifikasi</div>
+</section>
+
+<section class="section" style="margin-top:1rem">
+    <div class="grid-veroty">
+        <!-- Produk 1 -->
+        <div class="kartu-veroty">
+            <div class="kartu-veroty-gambar">🖥️</div>
+            <div class="kartu-veroty-body">
+                <div class="kartu-veroty-kode">Kode: VRO-CPU1</div>
+                <div class="kartu-veroty-nama">CPU Tray</div>
+                <div class="kartu-veroty-spesifikasi">Ukuran 215×480×310mm. Bahan MDF dilapisi HPL, roda castor plastik.</div>
+                <div class="kartu-veroty-harga-disensor">••••••••</div>
+                <button class="kartu-veroty-btn" onclick="tanyaProduk('CPU Tray VRO-CPU1')">💬 Tanya Harga</button>
+            </div>
+        </div>
+        <!-- Produk 2 -->
+        <div class="kartu-veroty">
+            <div class="kartu-veroty-gambar">🖥️</div>
+            <div class="kartu-veroty-body">
+                <div class="kartu-veroty-kode">Kode: VRO-CPU2</div>
+                <div class="kartu-veroty-nama">CPU Tray Premium</div>
+                <div class="kartu-veroty-spesifikasi">Ukuran 215×480×250mm. Bahan MDF + Metal finishing powder coating.</div>
+                <div class="kartu-veroty-harga-disensor">••••••••</div>
+                <button class="kartu-veroty-btn" onclick="tanyaProduk('CPU Tray VRO-CPU2')">💬 Tanya Harga</button>
+            </div>
+        </div>
+        <!-- Produk 3 -->
+        <div class="kartu-veroty">
+            <div class="kartu-veroty-gambar">🖥️</div>
+            <div class="kartu-veroty-body">
+                <div class="kartu-veroty-kode">Kode: VRO-CPU3</div>
+                <div class="kartu-veroty-nama">CPU Tray Large</div>
+                <div class="kartu-veroty-spesifikasi">Ukuran 250×480×310mm. Bahan MDF dilapisi HPL, edging PVC.</div>
+                <div class="kartu-veroty-harga-disensor">••••••••</div>
+                <button class="kartu-veroty-btn" onclick="tanyaProduk('CPU Tray VRO-CPU3')">💬 Tanya Harga</button>
+            </div>
+        </div>
+        <!-- Produk 4 -->
+        <div class="kartu-veroty">
+            <div class="kartu-veroty-gambar">💺</div>
+            <div class="kartu-veroty-body">
+                <div class="kartu-veroty-kode">Kode: VRO-KP01</div>
+                <div class="kartu-veroty-nama">Kursi Pimpinan Dakar I</div>
+                <div class="kartu-veroty-spesifikasi">Synth AJ CHR BC LT. Plywood ±15mm, busa full injection foam.</div>
+                <div class="kartu-veroty-harga-disensor">••••••••</div>
+                <button class="kartu-veroty-btn" onclick="tanyaProduk('Kursi Pimpinan Dakar I')">💬 Tanya Harga</button>
+            </div>
+        </div>
+        <!-- Produk 5 -->
+        <div class="kartu-veroty">
+            <div class="kartu-veroty-gambar">💺</div>
+            <div class="kartu-veroty-body">
+                <div class="kartu-veroty-kode">Kode: VRO-KP02</div>
+                <div class="kartu-veroty-nama">Kursi Pimpinan Senator I</div>
+                <div class="kartu-veroty-spesifikasi">CT WL SYNL. Plywood ±15mm, armrest kayu solid, gas lift hidrolic.</div>
+                <div class="kartu-veroty-harga-disensor">••••••••</div>
+                <button class="kartu-veroty-btn" onclick="tanyaProduk('Kursi Pimpinan Senator I')">💬 Tanya Harga</button>
+            </div>
+        </div>
+        <!-- Produk 6 -->
+        <div class="kartu-veroty">
+            <div class="kartu-veroty-gambar">💺</div>
+            <div class="kartu-veroty-body">
+                <div class="kartu-veroty-kode">Kode: VRO-KP03</div>
+                <div class="kartu-veroty-nama">Kursi Pimpinan Agra I</div>
+                <div class="kartu-veroty-spesifikasi">CT WL. Plywood ±15mm, busa full injection foam, mechanism reclening.</div>
+                <div class="kartu-veroty-harga-disensor">••••••••</div>
+                <button class="kartu-veroty-btn" onclick="tanyaProduk('Kursi Pimpinan Agra I')">💬 Tanya Harga</button>
+            </div>
+        </div>
+        <!-- Produk 7 -->
+        <div class="kartu-veroty">
+            <div class="kartu-veroty-gambar">👑</div>
+            <div class="kartu-veroty-body">
+                <div class="kartu-veroty-kode">Kode: VRO-KP04</div>
+                <div class="kartu-veroty-nama">Kursi Pimpinan Tiger I</div>
+                <div class="kartu-veroty-spesifikasi">CT WS / Kulit Asli. Plywood double layer ±18mm, cover kulit asli.</div>
+                <div class="kartu-veroty-harga-disensor">••••••••</div>
+                <button class="kartu-veroty-btn" onclick="tanyaProduk('Kursi Pimpinan Tiger I Kulit')">💬 Tanya Harga</button>
+            </div>
+        </div>
+        <!-- Produk 8 -->
+        <div class="kartu-veroty">
+            <div class="kartu-veroty-gambar">💺</div>
+            <div class="kartu-veroty-body">
+                <div class="kartu-veroty-kode">Kode: VRO-KP05</div>
+                <div class="kartu-veroty-nama">Kursi Pimpinan Tiger I OCR</div>
+                <div class="kartu-veroty-spesifikasi">CT WL / OCR. Plywood double layer ±18mm, five star kayu solid + besi.</div>
+                <div class="kartu-veroty-harga-disensor">••••••••</div>
+                <button class="kartu-veroty-btn" onclick="tanyaProduk('Kursi Pimpinan Tiger I OCR')">💬 Tanya Harga</button>
+            </div>
+        </div>
+        <!-- Produk 9 -->
+        <div class="kartu-veroty">
+            <div class="kartu-veroty-gambar">🐆</div>
+            <div class="kartu-veroty-body">
+                <div class="kartu-veroty-kode">Kode: VRO-KP06</div>
+                <div class="kartu-veroty-nama">Kursi Pimpinan Jaguar I</div>
+                <div class="kartu-veroty-spesifikasi">CT WL / OCR. Armrest fix aluminium chrome modif kayu solid.</div>
+                <div class="kartu-veroty-harga-disensor">••••••••</div>
+                <button class="kartu-veroty-btn" onclick="tanyaProduk('Kursi Pimpinan Jaguar I')">💬 Tanya Harga</button>
+            </div>
+        </div>
+        <!-- Produk 10 -->
+        <div class="kartu-veroty">
+            <div class="kartu-veroty-gambar">🤴</div>
+            <div class="kartu-veroty-body">
+                <div class="kartu-veroty-kode">Kode: VRO-KP07</div>
+                <div class="kartu-veroty-nama">Kursi Pimpinan King I</div>
+                <div class="kartu-veroty-spesifikasi">Eksklusif. Busa full injection foam, mechanism reclening multi locking.</div>
+                <div class="kartu-veroty-harga-disensor">••••••••</div>
+                <button class="kartu-veroty-btn" onclick="tanyaProduk('Kursi Pimpinan King I')">💬 Tanya Harga</button>
+            </div>
+        </div>
+        <!-- Produk 11 -->
+        <div class="kartu-veroty">
+            <div class="kartu-veroty-gambar">💺</div>
+            <div class="kartu-veroty-body">
+                <div class="kartu-veroty-kode">Kode: VRO-KP08</div>
+                <div class="kartu-veroty-nama">Kursi Pimpinan A.859</div>
+                <div class="kartu-veroty-spesifikasi">Sandaran frame polypropoline, head rest adjustable, cover mesh + fabric.</div>
+                <div class="kartu-veroty-harga-disensor">••••••••</div>
+                <button class="kartu-veroty-btn" onclick="tanyaProduk('Kursi Pimpinan A.859')">💬 Tanya Harga</button>
+            </div>
+        </div>
+        <!-- Produk 12 -->
+        <div class="kartu-veroty">
+            <div class="kartu-veroty-gambar">💺</div>
+            <div class="kartu-veroty-body">
+                <div class="kartu-veroty-kode">Kode: VRO-KP09</div>
+                <div class="kartu-veroty-nama">Kursi Pimpinan A.856</div>
+                <div class="kartu-veroty-spesifikasi">Sandaran mesh, dudukan fabric. Gas lift standart MDI/ANSI BIFMA.</div>
+                <div class="kartu-veroty-harga-disensor">••••••••</div>
+                <button class="kartu-veroty-btn" onclick="tanyaProduk('Kursi Pimpinan A.856')">💬 Tanya Harga</button>
+            </div>
+        </div>
+    </div>
+    
+    <p style="text-align:center;margin-top:2rem;color:#6b7280;font-size:.9rem">📌 Masih banyak produk lainnya! Untuk katalog lengkap 120 halaman, hubungi kami via WhatsApp ya 🙏</p>
+</section> 
+   
+    <section class="bagian-minta" id="minta">
     <h2>❓ Tidak menemukan barang yang Anda cari?</h2>
     <p>Joni akan bantu mencari dan membandingkan pilihan yang tersedia untuk Anda.</p>
     <button class="btn btn-aksen" onclick="tampilkanForm()">📦 MINTA DICARIKAN</button>
